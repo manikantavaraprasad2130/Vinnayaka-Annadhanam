@@ -2,7 +2,8 @@ import React,{useEffect,useState} from "react";
 import {createRoot} from "react-dom/client";
 import "./styles.css";
 
-const API=import.meta.env.VITE_API_URL||"http://localhost:5000/api";
+const isLocalDev = typeof window !== "undefined" && /localhost|127\.0\.0\.1/i.test(window.location.hostname);
+const API = import.meta.env.VITE_API_URL || (isLocalDev ? "http://localhost:5000/api" : `${window.location.origin}/api`);
 const empty={village:"",date:"",startTime:"",endTime:"",location:"",landmark:"",youthName:"",contact:""};
 
 function App(){
