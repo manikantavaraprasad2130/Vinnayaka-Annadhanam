@@ -1,7 +1,4 @@
-# Environment and secrets
-.env
-.env.*
-!.env.example
+# Environment and secrets are intentionally tracked for this deployment.
 *.pem
 *.key
 *.p12
